@@ -13,3 +13,9 @@ date_title/
     ├── img.img
     └── gif.gif
 ```
+
+# Flow
+- create draft
+- create PR
+- publish
+- merge to main
