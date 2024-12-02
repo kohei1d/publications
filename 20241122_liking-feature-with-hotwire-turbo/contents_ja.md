@@ -2,13 +2,15 @@
 
 # はじめに
 
-みなさんこんにちは、[kohteich](https://github.com/koheitech)です。
+みなさんこんにちは、Howtelevisionでソフトウェアエンジニアをしている宮本航平([kohei1d](https://github.com/kohei1d))です。
 
 先日、[Kaigi on Rails 2024](https://kaigionrails.org/2024/about/)でHotwireに関する登壇を拝見し、とても興味深く感じたため、自分で勉強してみました。今回はその学習記録を共有したいと思います。
 
 具体的には、[Rails7の公式チュートリアル](https://railstutorial.jp/chapters/beginning?version=7.0)で作成する[sample_apps](https://github.com/yasslab/sample_apps/tree/main/7_0)に、HotwireのTurboを使って記事のお気に入り機能を実装していきます。公式チュートリアルを終えて、さらにRailsを深く学びたい方や、Hotwireを使ったことがない方向けの内容となっています。
 
 それではやっていきましょう！
+
+この記事は、[HowTelevision Advent Calendar 2024](https://qiita.com/advent-calendar/2024/howtv) 2日目の記事です。
 
 # Hotwireとは？
 
@@ -17,7 +19,7 @@ Hotwireとは何か、その答えは[Hotwireの公式ページ](https://hotwire
 > Hotwire is an alternative approach to building modern web applications without using much JavaScript by sending HTML instead of JSON over the wire.
 > 
 
-「JSONの代わりにHTMLを直接送る」—これがHotwireの特徴です。
+「JSONの代わりにHTMLを直接送る」、これがHotwireの特徴です。
 
 一般的なWebアプリケーションは、FrontendとBackendという2つの部分で構成されています。BackendフレームワークとしてRuby on Railsが、FrontendフレームワークとしてReactやVue.jsなどが使われています。
 
@@ -30,7 +32,7 @@ JSONは以下のような構造を持ちます：
 ```json
 // 例
 {
-  "name": "山田太郎",
+  "name": "テスト",
   "age": 30,
   "purchaseHistory": [
     {
@@ -95,6 +97,7 @@ sequenceDiagram
 ```
 
 より詳しい内容については、以下の記事をご参照ください。とても分かりやすい解説なので、ぜひご一読ください。
+
 https://zenn.dev/shita1112/books/cat-hotwire-turbo
 
 # 今回作成するもの
@@ -336,11 +339,14 @@ JavaScriptを書かずにRailsアプリをモダンにできるのは魅力的�
 ## Cons:
 
 - くせが強め
-- Reactで作ってしまったほうが楽な気もする
 - まだ記事などが少なめ
 
-解説記事があまり多くないため、自力で実装を進めるコストが高く感じました。振り返ってみると、今回の機能実装もGitHub Copilotがなければかなり苦労していたと思います。業務ではReact/Next.jsでフロントエンドを開発していますが、Reactのほうがコミュニティが大きいため、思い切ってReactを学ぶのも良い選択肢かもしれません。
+解説記事が現状あまり多くないため、自力で実装を進めるコストが高く感じました。そこで、これから自分なりに業務に取り入れ、その内容をまたブログにまとめ、Hotwire、ひいてはRailsコミュニティを盛り上げていきたいです。
+
+ユースケースとして、例えば弊社ではAdmin画面はRailsで静的に作られており、こちらにHotwireを導入することで運用を行いやすくすることが出来るのではないかと考えております。
 
 # 最後に
 
-LiigaではHotwireは利用していませんが、Railsを用いて開発を行っております。現在一緒に働いてくれる仲間を募集しております。まずはカジュアル面談からでも構いません。[CTO の X](https://x.com/m3m0r7)へのDMや[HERP](https://herp.careers/v1/liiga)などからカジュアル面談希望の旨ぜひお送りください。ご連絡お待ちしております。
+Kaigi on Rails 2024 の運営スタッフの皆様お疲れ様でした。皆様がいたからこそ、新しい知見を得て形にできています。Hotwire 含め他の登壇者から得た新しい学びなどを活かして今後も開発をしていきたいと思います。
+
+そして Howtelevisionのプロダクト、Liigaでは Rails を用いて開発を行っております。[CTO の X](https://x.com/m3m0r7)へのDMや[HERP](https://herp.careers/v1/howtv)などからカジュアル面談希望の旨ぜひお送りください。ご連絡お待ちしております。
